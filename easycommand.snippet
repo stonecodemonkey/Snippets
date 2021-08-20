@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>EasyCommand</Title>
+      <Shortcut>easy</Shortcut>
+      <Description>Inserts a Cummins.WPF.MVVM.Commands EasyCommand</Description>
+      <Author>Brian Pruitt</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>field</ID>
+          <Default>ez</Default>
+        </Literal>
+        <Literal>
+          <ID>property</ID>
+          <Default>EZ</Default>
+        </Literal>
+        <Literal>
+          <ID>exeMethod</ID>
+          <Default>exeMethod</Default>
+        </Literal>
+        <Literal>
+          <ID>canExeMethod</ID>
+          <Default>canExeMethod</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        private EasyCommand $field$;
+        public EasyCommand $property$
+        {
+            get
+            {
+                if ($field$ == null)
+                {
+                    $field$ = new EasyCommand($exeMethod$, $canExeMethod$);
+                }
+                return $field$;
+            }
+        }
+
+        private bool $canExeMethod$()
+        {
+            return true;
+        }
+
+        private void $exeMethod$(object arg)
+        {
+            Console.WriteLine("Ta Da!");
+        }
+        $end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
